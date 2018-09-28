@@ -15,6 +15,8 @@
             line-height: 30px;
             text-align: left;
         }
+
+        /* 第一區 */
         #box-1 {
             height: 150vh;
         }
@@ -27,6 +29,8 @@
             position: absolute;
             z-index: -2;
         }
+
+        /* 第二區 */
         #box-2 {
             height: 150vh;
             /* background-color:yellow; */
@@ -40,6 +44,8 @@
             position: absolute;
             z-index: -2;
         }
+
+        /* 第三區 */
         #box-3 {
             height: 120vh;
             /* background-color:purple; */
@@ -53,6 +59,8 @@
             position: absolute;
             z-index: -2;
         }
+        
+        /* 三區共通滾動效果 */
         .box {
             text-align: center;
             opacity: 0;
@@ -63,6 +71,8 @@
             opacity: 1;
             /* transform: translateY(0); */
         }
+
+        /* 小圖 */
         .apple {
             width: 10%;
             margin-top: 100px;
@@ -75,13 +85,43 @@
             width: 10%;
             margin-top: 100px;  
         }
+
+        /* parallax */
+        .bcg-parallax {
+            padding: 150px 0;
+            color: white;
+            background-color: black;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .bcg {
+            background: url('img/children.jpg') no-repeat;
+            background-size: cover;
+            position: absolute;
+            width: 100%;
+            height: 180%;
+            top: 0;
+            z-index: 1;
+            opacity: 0.7;
+        }
+        .content-wrapper {
+            width: 90%;
+            margin:  0 auto;
+            max-width: 1140px;
+            position: relative;
+            z-index: 2;
+
+        }
+
     </style>
 </head>
 
 <body>
-
         <div id="box-1" class="box">
+            <!-- 半透明照片 -->
             <div class="bgdiv"></div>
+            <!-- 照面下的文字內容 -->
             <div style="width: 60%; margin: 0 auto">
                 <img src='img/apple.png' class="apple">
                 <h1>「生態不是我的個人資產」：花費36年拍攝，台灣導演劉燕明無償捐出700捲影片</h1>
@@ -95,10 +135,20 @@
             </div>
         </div>
 
-        <div id="box-2" class="box">
-            <!-- 半透明照片 -->
+        <!-- 新增一塊 parallax -->
+        <div class="bcg-parallax">
+            <div class="bcg"></div>
+            <div class="content-wrapper">
+                <h1>Section with Parallax Effect</h1>
+                <p>農委會林務局今天召開「劉燕明導演畢生自然生態影像捐贈簽約儀式」記者會，劉燕明與林務局簽約，將36年來拍攝的影像資料，全數無償捐贈給林務局。
+                    今年67歲的劉燕明，是台灣第一個用16厘米攝影機拍鳥的生態攝影師，拍鳥資歷超過30年，台灣前3部生態紀錄片都是出自他手。</p>
+            </div>
+
+        </div>
+        <!-- parallax 結束 -->
+
+        <div id="box-2" class="box">        
             <div class="bgdiv2"></div>
-            <!-- 照面下的文字內容 -->
             <div style="width: 60%; margin: 0 auto">
                 <img src='img/trash.png' class="trash">
                 <h2>「我就是喜歡拍動物」為了拍攝熊鷹，他可以藏身在樹上近百天</h2>
@@ -128,10 +178,15 @@
         </div>
         
         
-
+        <!-- scroller cdn -->
         <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
+
+        <!-- parallax cdn -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+
 
 
         <script type="text/javascript" src='js_all.js'></script>

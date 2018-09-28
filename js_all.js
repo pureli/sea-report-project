@@ -25,9 +25,13 @@
 //     .addTo(controller);
 // });
 
+
+
+
+
 // 另一種寫法 
-// loop through each .box element
 $(document).ready(function(){
+    // loop through each .box element
     //init ScrollMagic
     var controller = new ScrollMagic.Controller();
     
@@ -40,5 +44,32 @@ $(document).ready(function(){
         .addTo(controller);
     }
     );
+
+
+
+    
+    // section with parallax effect
+    var slideParallaxScene = new ScrollMagic.Scene({
+        triggerElement: '.bcg-parallax',
+        triggerHook: 1,
+        duration: '200%'
+    })
+    .setTween(TweenMax.from('.bcg', 1, {y:'-50%', ease:Power0.easeNone}))
+    .addTo(controller);
+
+    // 呈上，另一種寫法（有問題待研究）
+    // var parallaxTl = new TimeLineMax();
+    // parallaxTl
+    //     .from('.content-wrapper', 1, {autoAlpha: 0, ease:Power0.easeNone})
+    //     .from('.bcg', 1, {y: '-50%', ease:Power0.easeNone})
+    //     ;
+    
+    // var slideParallaxScene = new ScrollMagic.Scene({
+    //     triggerElement: '.bcg-parallax',
+    //     triggerHook: 1,
+    //     duration: '100%'
+    // })
+    // .setTween(parallaxTl)
+    // .addTo(controller);
     
 });
